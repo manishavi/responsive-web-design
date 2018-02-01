@@ -1,9 +1,15 @@
 /* Call To Action (CTA) Styles */
-
+@phone: ~'(max-width: 400px)';
+@tablet: ~'(max-width: 768px )';
+@desktop: ~'(max-width: 1100px)';
 .cta {
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
+    @media @tablet {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
 
     .cta-text {
         font-size: 72px;

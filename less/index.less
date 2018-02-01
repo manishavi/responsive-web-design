@@ -1,3 +1,6 @@
+@phone: ~'(max-width: 400px)';
+@tablet: ~'(max-width: 768px )';
+@desktop: ~'(max-width: 1100px)';
 @import "reset";
 @import "mixins";
 @import "general-styles";
@@ -6,16 +9,77 @@
 @import "main-content";
 @import "contact";
 @import "footer";
+.container {
+    max-width: 100%;
+}
 
+header {
+    margin-top: 30px;
+    align-items: center;
+    @media @tablet {
+        flex-direction: column-reverse;
+    }
+    .logo {
+        margin: 0;
+        align-self: unset;
+        @media @tablet {
+            align-self: center;
+            margin-bottom: 30px;
+        }
+    }
+    nav {
+        width: 100%;
+        ul {
+            width: unset;
+            justify-content: space-evenly;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+            @media @phone {
+                flex-direction: column;
+                text-align: center;
+            }
+            li {
+                align-items: center;
+                @media @tablet {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
 
+.cta {
+    @media @phone {
+        margin-top: 0;
+    }
+    img {
+        max-width: 100%;
+        @media @tablet {
+            margin: 0 auto 20px auto;
+        }
+    }
+}
 
+.main-content {
+    padding: 35px 20px;
+    .middle-img {
+        max-width: 100%;
+    }
+    .bottom-content,
+    .top-content {
+        p {
+            padding-right: 20px;
+        }
+        @media @tablet {
+            flex-direction: column;
+            .text-content {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
+section {
+    padding: 35px 20px;
+}
